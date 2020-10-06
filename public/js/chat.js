@@ -5,7 +5,7 @@ const $messageForm=document.querySelector('#message-form')
 const $messageFormInput=$messageForm.querySelector('input')
 const $messageFormButton=$messageForm.querySelector('button')
 const $sendLocationButton=document.querySelector('#send-location');
-const $messages=document.querySelector('#messages')//srlrct the elemnt in which u want to render
+const $messages=document.querySelector('#messages')//select the elemnt in which u want to render
 
 
 
@@ -84,6 +84,7 @@ $messageForm.addEventListener('submit',(e)=>{
     //send message to server
     socket.emit('sendMessage',message,(error)=>{
         $messageFormButton.removeAttribute('disabled') //enabbled
+        $messageFormInput.value=''
         $messageFormInput.focus() //input back to focus
         if(error)
         {
