@@ -33,7 +33,7 @@ socket.on('join',({username,room},callback)=>{
           room:user.room,
           users:getUsersInRoom(user.room)
       })
-      callback() //for ackknowledgement
+      callback() //for ackknowledgement 
 })
 
 
